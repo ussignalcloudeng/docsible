@@ -113,7 +113,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 {% if specs.description is iterable and (specs.description is not string and specs.description is not mapping) -%}
 **Description**: 
 {% for desc in specs.description -%}
-  - {{ desc }}
+    - {{ desc }}
 {% endfor %}
 {% else %}
 **Description**: {{ specs.description or specs.short_description or 'No description provided' }}
