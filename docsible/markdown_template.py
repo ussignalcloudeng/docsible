@@ -68,7 +68,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 {%- endif %}
 {%- endif %}
 
-{% macro render_arguments_list(arguments, level=0) %}
+{% macro render_arguments_list(arguments, level=0) -%}
 {% for arg, details in arguments.items() -%}
   {%- set indent = '  ' * level %}
   {{ indent }}- **{{ arg }}**
