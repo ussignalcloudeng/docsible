@@ -80,7 +80,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {% for details_desc in details.description -%}
       {{ indent }}    - {{ details_desc }}
   {%- endfor %}
-  {% else -%}
+  {%- else %}
   {{ indent }}  - **Description**: {{ details.description | default('No description provided') }}
   {%- endif %}
   {% if details.choices is defined -%}
