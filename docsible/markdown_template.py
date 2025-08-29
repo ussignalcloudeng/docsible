@@ -123,7 +123,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 **Options**:
 {{ render_arguments_list(specs.options) }}
 {%- endif %}
-{% endfor %}
+{%- endfor %}
 </details>
 {% else %}
 {% endif %}
