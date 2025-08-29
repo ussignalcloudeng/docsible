@@ -118,7 +118,6 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 {%- else %}
 **Description**: {{ specs.description or specs.short_description or 'No description provided' }}
 {%- endif %}
-
 {% if specs.options is defined -%}
 **Options**:
 {{ render_arguments_list(specs.options) }}
