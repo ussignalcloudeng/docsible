@@ -69,7 +69,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 {%- endif %}
 
 {% macro render_arguments_list(arguments, level=0) %}
-{% for arg, details in arguments.items() %}
+{% for arg, details in arguments.items() -%}
   {%- set indent = '  ' * level %}
   {{ indent }}- **{{ arg }}**
   {{ indent }}  - **Required**: {{ details.required | default('false') }}
@@ -102,7 +102,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 {{ indent }}  - **Options**: 
         {{ render_arguments_list(details.options, level + 2) }}
   {%- endif %}
-{% endfor %}
+{%- endfor %}
 {% endmacro %}
 
 {% if role.argument_specs %}
