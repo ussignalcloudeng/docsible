@@ -110,11 +110,11 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 <summary><b>🧩 Argument Specifications in meta/argument_specs</b></summary>
 {% for section, specs in role.argument_specs.argument_specs.items() %}
 #### Key: {{ section }}
-{% if specs.description is iterable and (specs.description is not string and specs.description is not mapping) %}
+{% if specs.description is iterable and (specs.description is not string and specs.description is not mapping) -%}
 **Description**: 
 {% for desc in specs.description -%}
   - {{ desc }}
-{% endfor -%}
+{%- endfor %}
 {% else %}
 **Description**: {{ specs.description or specs.short_description or 'No description provided' }}
 {%- endif %}
