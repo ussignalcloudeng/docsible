@@ -100,9 +100,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
     {{ render_arguments_list(details.options, level + 1) }}
   {% elif details.type == 'list' and details.elements == 'dict' %}
 {{ indent }}  - **Options**: 
-    {% for elem in details.options %}
         {{ render_arguments_list(elem, level + 1) }}
-    {% endfor %}
   {% endif %}
 {% endfor %}
 {% endmacro %}
