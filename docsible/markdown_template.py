@@ -103,7 +103,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
         {{ render_arguments_list(details.options, level + 2) }}
   {%- endif -%}
 {%- endfor -%}
-{% endmacro %}
+{%- endmacro %}
 
 {% if role.argument_specs %}
 <details>
