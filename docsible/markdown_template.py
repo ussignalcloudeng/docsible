@@ -87,7 +87,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {{ indent }}  - **Choices**:
   {% for choice in details.choices -%}
       {{ indent }}    - {{ choice }}
-  {% endfor %}
+  {%- endfor %}
   {%- endif %}
   {% if details.aliases is defined -%}
   {{ indent }}  - **Aliases**:
