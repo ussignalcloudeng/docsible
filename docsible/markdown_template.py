@@ -85,15 +85,15 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {%- endif %}
   {%- if details.choices is defined -%}
     {{ indent }}  - **Choices**:
-    {% for choice in details.choices -%}
+    {% for choice in details.choices %}
       {{ indent }}    - {{ choice }}
-    {%- endfor %}
+    {% endfor %}
   {%- endif -%}
   {%- if details.aliases is defined -%}
     {{ indent }}  - **Aliases**:
-    {% for alias in details.aliases -%}
+    {% for alias in details.aliases %}
       {{ indent }}    - {{ alias }}
-    {%- endfor %}
+    {% endfor %}
   {%- endif -%}
   {%- if details.type == 'dict' and details.options -%}
 {{ indent }} {{ indent }}  - **Options**:
