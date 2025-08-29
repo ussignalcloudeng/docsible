@@ -85,7 +85,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {%- endif %}
   {% if details.choices is defined -%}
     {{ indent }}  - **Choices**:
-    {% for choice in details.choices %}
+    {% for choice in details.choices -%}
       {{ indent }}    - {{ choice }}
     {% endfor %}
   {%- endif %}
@@ -103,7 +103,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
         {{ render_arguments_list(details.options, level + 2) }}
   {%- endif -%}
 {%- endfor -%}
-{%- endmacro %}
+{% endmacro %}
 
 {% if role.argument_specs %}
 <details>
