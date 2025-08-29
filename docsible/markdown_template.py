@@ -115,7 +115,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 {% for desc in specs.description -%}
     - {{ desc }}
 {% endfor %}
-{% else %}
+{%- else %}
 **Description**: {{ specs.description or specs.short_description or 'No description provided' }}
 {%- endif %}
 
