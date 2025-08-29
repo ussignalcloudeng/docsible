@@ -83,18 +83,18 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {% else %}
   {{ indent }}  - **Description**: {{ details.description | default('No description provided') }}
   {%- endif %}
-  {% if details.choices is defined -%}
+  {%- if details.choices is defined -%}
     {{ indent }}  - **Choices**:
     {% for choice in details.choices -%}
       {{ indent }}    - {{ choice }}
     {%- endfor %}
-  {%- endif %}
-  {% if details.aliases is defined -%}
+  {%- endif -%}
+  {%- if details.aliases is defined -%}
     {{ indent }}  - **Aliases**:
     {% for alias in details.aliases -%}
       {{ indent }}    - {{ alias }}
     {%- endfor %}
-  {%- endif %}
+  {%- endif -%}
   {%- if details.type == 'dict' and details.options -%}
 {{ indent }} {{ indent }}  - **Options**:
     {{ render_arguments_list(details.options, level + 1) }}
