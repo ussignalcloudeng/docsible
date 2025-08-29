@@ -79,7 +79,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {{ indent }}  - **Description**: 
   {% for details_desc in details.description -%}
       {{ indent }}    - {{ details_desc }}
-  {% endfor -%}
+  {%- endfor %}
   {% else %}
   {{ indent }}  - **Description**: {{ details.description | default('No description provided') }}
   {%- endif %}
@@ -125,8 +125,8 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
 {%- endif %}
 {%- endfor %}
 </details>
-{% else %}
-{% endif %}
+{%- else %}
+{%- endif %}
 
 {% macro render_repo_link(repo, role_name, file_path, line, repo_type, branch) -%}
   {%- if repo and file_path and line is not none -%}
