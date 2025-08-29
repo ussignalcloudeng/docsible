@@ -91,7 +91,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {%- endif -%}
   {%- if details.aliases is defined -%}
     {{ indent }}  - **Aliases**:
-    {% for alias in details.aliases %}
+    {% for alias in details.aliases -%}
       {{ indent }}    - {{ alias }}
     {% endfor %}
   {%- endif -%}
