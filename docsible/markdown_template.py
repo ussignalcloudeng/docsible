@@ -76,7 +76,7 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {{ indent }}  - **Type**: {{ details.type }}
   {{ indent }}  - **Default**: {{ details.default | default('none') }}
   {% if details.description is iterable and (details.description is not string and details.description is not mapping) -%}
-  {{ indent }}. - **Description**: 
+  {{ indent }}  - **Description**: 
   {% for details_desc in details.description -%}
       {{ indent }}  - {{ details_desc }}
   {% endfor -%}
