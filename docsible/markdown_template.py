@@ -97,10 +97,10 @@ Description: {{ role.meta.galaxy_info.description or 'Not available.' }}
   {%- endif -%}
   {% if details.type == 'dict' and details.options -%}
   {{ indent }}  - **Options**:
-      {{ indent }}    - {{ render_arguments_list(details.options, level + 2) }}
+      {{ indent }}      {{ render_arguments_list(details.options, level + 2) }}
   {%- elif details.type == 'list' and details.elements == 'dict' -%}
   {{ indent }}  - **Options**:
-      {{ indent }}    - {{ render_arguments_list(details.options, level + 2) }}
+      {{ indent }}      {{ render_arguments_list(details.options, level + 2) }}
   {%- endif -%}
 {%- endfor -%}
 {% endmacro %}
